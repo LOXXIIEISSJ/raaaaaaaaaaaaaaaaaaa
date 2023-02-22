@@ -1,13 +1,13 @@
 {% extends 'base.html' %}  
 
 {% set active_page = 'profile' %}
-{% block title %}{{ user.username }} - Stachums{% endblock %}
+{% block title %}{{ user.username }} - Incognito Forums{% endblock %}
 {% block main %}
 
 <div class="postData clearfix">
   <div class="userInfo">
   <div class="sep"><img class="profilePicture" src="{{ url_for('static', filename='imgs/user/'+user.profile_pic) }}" alt="Profile Picture"></div>
-  <div class="sep"><p class="red name">@{{ user.username }}</p><p class="rank">Rank: [{{ user.role }}]</p></div>
+  <div class="sep"><p class="red name">@{{ user.username }}</p><p class="rank">[{{ user.role }}]</p></div>
   <div class="sep date"><time>Joined {{ user.registered_on.strftime('%Y-%m-%d') }}</time></div>
   <div class="sep"><p class="description">{{ user.posts|length + user.comments|length }} posts</p><p class="description">{{ user.followers.all()|length }} followers</p><p class="description">{{ daysBetween(user.last_active) }}</p></div>
     {% if current_user.is_authenticated and current_user != user %}

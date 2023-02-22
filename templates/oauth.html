@@ -3,9 +3,9 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#222"/>
-  <meta name="description" content="Name Forums">
+  <meta name="description" content="Incognito Forums">
   <meta name="viewport" content="width=device-width">
-  <title>STACHUMS OAUTH</title>
+  <title>INCOGNITO OAUTH</title>
   <link href="{{ url_for('static', filename='oauth.css') }}" rel="preconnect stylesheet" type="text/css" />
   <link href="{{ url_for('static', filename='style.css') }}" rel="preconnect stylesheet" type="text/css" />
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -37,11 +37,10 @@
     <div class="pagesize">
         <div class="socials">
         <ul class="clearfix">
-            <a class="left" href="{{ settings['base']['source link'] }}">Repl</a>
             {% if current_user.is_authenticated %}
             <a class="left" href="{{ url_for('profile', username=current_user.username) }}">Profile</a>
             {% else %}
-            <a href="{{ url_for('profile', username='ENIAC')}}" class="left">Profile</a>
+            <a href="{{ url_for('profile', username='LIX')}}" class="left">Profile</a>
             {% endif %}
             <a href="{{url_for('topic', murl='feedback')}}" class="right">Feedback</a>
         </ul>

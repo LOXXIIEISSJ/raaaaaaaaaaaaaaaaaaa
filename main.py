@@ -568,7 +568,7 @@ def login():
 
   elif register_form.submitReg.data and register_form.validate():
     email = bleach.clean(register_form.email.data)
-    if Email.query.filter_by(email=email).first() or User.query.filter_by(username=register_form.username.data):
+    if Email.query.filter_by(email=email).first() or User.query.filter_by(username=register_form.username.data).first():
       return render_template("login.html",
                          login_form=login_form,
                          register_form=register_form,
@@ -732,6 +732,9 @@ def legal():
 
 with app.app_context():
   db.create_all()
+  #User.query.filter_by(
+  #  username='Lix').first().admin = True
+  #db.session.commit()
 
 from base64 import b64decode
 @app.route("/auth/<nextURL>", methods=['GET', 'POST'])

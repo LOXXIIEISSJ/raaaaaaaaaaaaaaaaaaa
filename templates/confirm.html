@@ -10,9 +10,8 @@
   
   <div class="link_container">
     <h2 class="email_welcome">Welcome {{ name }}!</h2>
-    <p>You are reciving this email because an account has been registered at {{ settings['website']['name'] }} using your email. <u>If this action was not preformed by you, ignore this message.</u> If you have registered, please <a href="{{ url_for('confirm', id=code, _external=True) }}" class="confirm_link"><b>click this link</b></a> to confirm ownership of this email in association with the account. The link expires {{ expiry }}.</p>
-    <p>Best Regards,<br><i>The <a href="{{ url_for('index', _external=True) }}">{{ settings['website']['name'] }}</a> team.</i></p>
-    <i>This email is not monitored--please do not send inqueries to this address. If you have any questions or concerns, please email <a href="mailto:yivano17@gmail.com">yivano17@gmail.com</a></i>
+    <p>You are reciving this email because an account has been registered at Incognito Forums with your email. If this action was not preformed by you, please ignore this message. If you have registered, please <a href="{{ url_for('confirm', id=code, _external=True) }}" class="confirm_link"><b>click this link</b></a> to confirm ownership of this email in association with the account. The link expires {{ expiry }}.</p>
+    <p>Regards,<br><i>The <a href="{{ url_for('index', _external=True) }}">{{ settings['website']['name'] }}</a> team.</i></p>
   </div>
 
   </div>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}  
 
 {% set active_page = 'forum' %}
-{% block title %}{{ post.title|safe }} - Stachums{% endblock %}
+{% block title %}{{ post.title|safe }} - Incognito Forums{% endblock %}
 {% block main %}
 
   <ul class="bread">
@@ -16,7 +16,7 @@
   <div class="postData clearfix">
     <div class="userInfo">
     <div class="sep"><img class="profilePicture" src="{{ url_for('static', filename='imgs/user/'+post.author.profile_pic) }}" alt="Profile Picture"></div>
-    <div class="sep"><p class="name"><a class="red nostyle" href="{{ url_for('profile', username=post.author.username) }}">@{{ post.author.username }}</a></p><p class="rank">Rank: [{{ post.author.role }}]</p></div>
+    <div class="sep"><p class="name"><a class="red nostyle" href="{{ url_for('profile', username=post.author.username) }}">@{{ post.author.username }}</a></p><p class="rank">[{{ post.author.role }}]</p></div>
     <div class="sep date"><time>Joined {{ post.author.registered_on.strftime('%Y-%m-%d') }}</time></div>
     <div class="sep"><p class="description">{{ post.author.description }}</p></div>
     <div class="sep"><p class="description">{{ post.author.posts|length + post.author.comments|length }} posts</p><p class="description">{{ post.author.followers.all()|length }} followers</p><p class="description">{{ daysBetween(post.author.last_active) }}</p></div>
@@ -85,7 +85,7 @@
 reply.id }}" class="postData clearfix">
     <div class="userInfo">
       <div class="sep"><img class="profilePicture" src="{{ url_for('static', filename='imgs/user/'+reply.author.profile_pic) }}" loading="lazy" alt="Profile Picture"></div>
-    <div class="sep"><p class="name"><a class="red nostyle" href="{{ url_for('profile', username=reply.author.username) }}">@{{ reply.author.username }}</a></p><p class="rank">Rank: [{{ reply.author.role }}]</p></div>
+    <div class="sep"><p class="name"><a class="red nostyle" href="{{ url_for('profile', username=reply.author.username) }}">@{{ reply.author.username }}</a></p><p class="rank">[{{ reply.author.role }}]</p></div>
     <div class="sep date">Joined <time>{{ reply.author.registered_on.strftime('%Y-%m-%d') }}</time></div>
     <div class="sep"><p class="description">{{ reply.author.description }}</p></div>
     <div class="sep"><p class="description">{{ reply.author.posts|length + reply.author.comments|length }} posts</p><p class="description">{{ reply.author.followers.all()|length }} followers</p><p class="description">{{ daysBetween(reply.author.last_active) }}</p></div>
@@ -118,7 +118,7 @@ reply.id }}" class="postData clearfix">
   <div class="postData clearfix">
   <div class="userInfo">
     <div class="sep"><img class="profilePicture" src="{{ url_for('static', filename='imgs/user/'+current_user.profile_pic) }}" alt="Profile Picture"></div>
-  <div class="sep"><p class="red name">@{{ current_user.username }}</p><p class="rank">Rank: [{{ current_user.role }}]</p></div>
+  <div class="sep"><p class="red name">@{{ current_user.username }}</p><p class="rank">[{{ current_user.role }}]</p></div>
   </div>
   <div class="message">
     <form action="#" method="post" class="login">
